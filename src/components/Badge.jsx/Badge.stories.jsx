@@ -1,6 +1,6 @@
 import React from 'react';
 import Badge from '../Badge.jsx/Badge';
-import '../../index.css'; // Ensure to import your CSS styles
+import '../../index.css';
 
 export default {
   title: 'Components/Badge',
@@ -8,29 +8,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `The \`Badge\` component is used to display small, count-like notifications or labels.
-It can be customized with different colors (via the \`variant\` prop) and sizes (via the \`size\` prop).
-It is commonly used to indicate status or a number of notifications.`,
+        component: `The \`Badge\` component displays a small label or indicator. It is useful for showing notifications or statuses.`,
       },
-      page: () => (
-        <>
-          <h1>Badge Component</h1>
-          <p>
-            The \`Badge\` component displays a small label or indicator. It's useful for showing
-            notifications, statuses, or counts. Customize the color, size, and label through props.
-          </p>
-          <h2>Usage</h2>
-          <pre>
-            {`<Badge label="New" variant="primary" size="md" />`}
-          </pre>
-          <h3>Props</h3>
-          <ul>
-            <li><strong>label</strong>: The text displayed inside the badge (string).</li>
-            <li><strong>variant</strong>: The color of the badge. Options: \`primary\`, \`success\`, \`warning\`, \`error\`.</li>
-            <li><strong>size</strong>: The size of the badge. Options: \`sm\`, \`md\`, \`lg\`.</li>
-          </ul>
-        </>
-      ),
     },
   },
   argTypes: {

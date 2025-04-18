@@ -1,19 +1,18 @@
-// .storybook/main.js
+import { mergeConfig } from 'vite';
 
-module.exports = {
-  stories: [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-  ],
-  addons: [
-    "@storybook/addon-essentials",
-    "@storybook/addon-docs",  // Docs addon for documentation
-    "@storybook/addon-onboarding",  // Onboarding (optional)
-    "@chromatic-com/storybook",  // Visual testing addon (optional)
-    "@storybook/experimental-addon-test",  // Experimental testing (optional)
-  ],
+export default {
   framework: {
-    name: "@storybook/react-vite",
+    name: '@storybook/react-vite', // ✅ using Vite is fine
     options: {},
+  },
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-docs'],
+  viteFinal: async (config) => {
+    return mergeConfig(config, {
+      // custom Vite config if needed
+    });
+  },
+  docs: {
+    autodocs: true, // ✅ Enables the auto-generated Docs tab
   },
 };
